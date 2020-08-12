@@ -12,6 +12,6 @@ model = word2vec.Word2Vec(data, size = 150, window = 5, min_count=5, workers = 1
 # 50차원 벡터,
 # 출현 빈도는 5개 미만은 제외
 # 분석 방법론은 Skip-gram을 선택
-model_path = "/home/hyeyoung/dataset/model/Skipgram_model_dimension150.model"
+model_path = "/home/hyeyoung/dataset/model/Skipgram_model_dimension100.model"
 model.save(model_path)
 

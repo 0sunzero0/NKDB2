@@ -4,9 +4,6 @@ import pickle
 with open('/home/hyeyoung/dataset/data/sentence_list1.txt', 'rb') as f:
     sentence_list = pickle.load(f)
 
-index = 86098
-sentence_list = sentence_list[86098:86098*2]
-
 from konlpy.tag import Okt
 import re
 
@@ -43,5 +40,5 @@ result_list = preprocess(sentence_list)
 
 # 2. pickle 모듈을 활용하여 데이터 입력
 # @@@ modify
-with open('/home/hyeyoung/dataset/data/result_list1_2.txt', 'wb') as f:
+with open('/home/hyeyoung/dataset/data/result_list1.txt', 'wb') as f:
     pickle.dump(result_list, f)

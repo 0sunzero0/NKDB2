@@ -1,8 +1,6 @@
 from bokeh.plotting import figure, show, output_notebook, output_file
 from bokeh.models import HoverTool, ColumnDataSource, value
 
-output_file('50.html')
-
 import pickle
 tsne_vectors_filepath = '/home/hyeyoung/dataset/data/tsne_vectors_50.txt'
 with open(tsne_vectors_filepath, 'rb') as f:

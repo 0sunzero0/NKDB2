@@ -2,7 +2,7 @@
 import pandas as pd
 from gensim.models import Word2Vec
 
-word2vec_filepath = "/home/hyeyoung/tmp/NKDB2_project/105.189 - topicmodel/model_path"
+word2vec_filepath = "/home/hyeyoung/dataset/model/Skipgram_model_dimension100.model"
 model = Word2Vec.load(word2vec_filepath)
 
 ordered_vocab = [(term, voc.index, voc.count) for term, voc in model.wv.vocab.items()]
