@@ -1,46 +1,46 @@
 #-*- coding: utf-8 -*-
 import pickle
 
-with open('/home/hyeyoung/NKDB/data/result_list1.txt', 'rb') as f:
+with open('/home/hyeyoung/dataset/data2/result_list1_2.txt', 'rb') as f:
     data1 = pickle.load(f) # 단 한줄씩 읽어옴
 
-with open('/home/hyeyoung/NKDB/data/result_list2.txt', 'rb') as f:
+with open('/home/hyeyoung/dataset/data2/result_list2_2.txt', 'rb') as f:
     data2 = pickle.load(f) # 단 한줄씩 읽어옴
 
-with open('/home/hyeyoung/NKDB/data/result_list3.txt', 'rb') as f:
+with open('/home/hyeyoung/dataset/data2/result_list3_2.txt', 'rb') as f:
     data3 = pickle.load(f) # 단 한줄씩 읽어옴
 
-with open('/home/hyeyoung/NKDB/data/result_list4.txt', 'rb') as f:
+with open('/home/hyeyoung/dataset/data2/result_list4_2.txt', 'rb') as f:
     data4 = pickle.load(f) # 단 한줄씩 읽어옴
 
-with open('/home/hyeyoung/NKDB/data/result_list5.txt', 'rb') as f:
+with open('/home/hyeyoung/dataset/data2/result_list5_2.txt', 'rb') as f:
     data5 = pickle.load(f) # 단 한줄씩 읽어옴
 
-with open('/home/hyeyoung/NKDB/data/result_list6.txt', 'rb') as f:
+with open('/home/hyeyoung/dataset/data2/result_list6_2.txt', 'rb') as f:
     data6 = pickle.load(f) # 단 한줄씩 읽어옴
 
-with open('/home/hyeyoung/NKDB/data/result_list7.txt', 'rb') as f:
+with open('/home/hyeyoung/dataset/data2/result_list7_2.txt', 'rb') as f:
     data7 = pickle.load(f) # 단 한줄씩 읽어옴
 
-with open('/home/hyeyoung/NKDB/data/result_list8.txt', 'rb') as f:
+with open('/home/hyeyoung/dataset/data2/result_list8_2.txt', 'rb') as f:
     data8 = pickle.load(f) # 단 한줄씩 읽어옴
 
-with open('/home/hyeyoung/NKDB/data/result_list9.txt', 'rb') as f:
+with open('/home/hyeyoung/dataset/data2/result_list9_2.txt', 'rb') as f:
     data9 = pickle.load(f)  # 단 한줄씩 읽어옴
 
-with open('/home/hyeyoung/NKDB/data/result_list10.txt', 'rb') as f:
+with open('/home/hyeyoung/dataset/data2/result_list10_2.txt', 'rb') as f:
     data10 = pickle.load(f)  # 단 한줄씩 읽어옴
 
-with open('/home/hyeyoung/NKDB/data/result_list11.txt', 'rb') as f:
+with open('/home/hyeyoung/dataset/data2/result_list11_2.txt', 'rb') as f:
     data11 = pickle.load(f)  # 단 한줄씩 읽어옴
 
-with open('/home/hyeyoung/NKDB/data/result_list12.txt', 'rb') as f:
+with open('/home/hyeyoung/dataset/data2/result_list12_2.txt', 'rb') as f:
     data12 = pickle.load(f)  # 단 한줄씩 읽어옴
 
-with open('/home/hyeyoung/NKDB/data/result_list13.txt', 'rb') as f:
+with open('/home/hyeyoung/dataset/data2/result_list13_2.txt', 'rb') as f:
     data13 = pickle.load(f)  # 단 한줄씩 읽어옴
 
-with open('/home/hyeyoung/NKDB/data/result_list14.txt', 'rb') as f:
+with open('/home/hyeyoung/dataset/data2/result_list14_2.txt', 'rb') as f:
     data14 = pickle.load(f)  # 단 한줄씩 읽어옴
 
 total_morphslist = []
@@ -62,6 +62,6 @@ total_morphslist.extend(data14)
 
 print(len(total_morphslist))
 
-with open('/home/hyeyoung/NKDB/data/total_morphs_list.txt', 'wb') as f:
+with open('/home/hyeyoung/dataset/data/total_morphs_list_2.txt', 'wb') as f:
     pickle.dump(total_morphslist, f)
 

@@ -1,26 +1,26 @@
 #-*- coding: utf-8 -*-
 
 import pickle
-with open('/home/hyeyoung/dataset/data/doc_list.txt', 'rb') as f:
-    data = pickle.load(f) # 단 한줄씩 읽어옴
+with open('/home/hyeyoung/dataset/data/sentence_list1.txt', 'rb') as f:
+    sentence_list = pickle.load(f)
 
-# 1. 형태소 분석 등 전처리하기
+index = 86098
+sentence_list = sentence_list[86098*4:86098*5]
+
 from konlpy.tag import Okt
 import re
 
-def preprocess(doc_list):
+def preprocess(sentence_list):
     okt = Okt()
     print(okt.tagset)
-    #result_doclist = []
-    result_dict = []
-    for index in range(0, len(doc_list)):
-        remove_file_enc = re.compile(r'<[^>]+>');
-        remove_special_char = re.compile(r"[^가-힣^.^,^?^!^]")
+    result_list = []
+
+    index = 0
+    for one_sentence in sentence_list:
+        remove_special_char = re.compile(r"[^가-힣|a-z|A-Z^.^,^?^!^]")
 
         # 한글, 기본 기호를 제외한 문자 제거하기(일단, 전체 문서가 한국어로만 되어 있다고 가정한다.) 이때, 특수기호 및 \t, \n, 구두점도 같이 제거된다.
-        text = remove_file_enc.sub('', doc_list[index])
-        text = remove_special_char.sub(' ', text)
-
+        text = remove_special_char.sub(' ', str(one_sentence))
         # 형태소 분석하기 (이때, norm = true, stem = true)
         morphs_texts= okt.pos(text, norm=True, stem=True)
 
@@ -31,20 +31,17 @@ def preprocess(doc_list):
         for token, tag in morphs_texts:
             # stopwords 제외 and 감탄사, 조사, 어미 제외
             #print(token, tag)
-            #if token not in stop_words and tag in ['Noun', 'Verb', 'Adjective', 'Determiner', 'Adverb', 'Conjuction', 'Suffix']:
-            if token not in stop_words and tag in ['Noun', 'Verb', 'Adjective', 'Foreign']:
+            if token not in stop_words and tag in ['Noun', 'Verb', 'Adjective']:
                 result.append(token)
 
-        result_dict.append(result)
+        result_list.append(result)
+        index += 1
         print(index)
+    return result_list
 
-    return result_dict
-
-# @@@ modify
-data = data[13000:14000]
-result_list = preprocess(data)
+result_list = preprocess(sentence_list)
 
 # 2. pickle 모듈을 활용하여 데이터 입력
 # @@@ modify
-with open('/home/hyeyoung/dataset/data2/result_list14_2.txt', 'wb') as f:
+with open('/home/hyeyoung/dataset/data/result_list1_5.txt', 'wb') as f:
     pickle.dump(result_list, f)

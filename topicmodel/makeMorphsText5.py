@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 
 import pickle
-with open('/home/hyeyoung/NKDB/data/doc_list.txt', 'rb') as f:
+with open('/home/hyeyoung/dataset/data/doc_list.txt', 'rb') as f:
     data = pickle.load(f) # 단 한줄씩 읽어옴
 
 # 1. 형태소 분석 등 전처리하기
@@ -31,7 +31,8 @@ def preprocess(doc_list):
         for token, tag in morphs_texts:
             # stopwords 제외 and 감탄사, 조사, 어미 제외
             #print(token, tag)
-            if token not in stop_words and tag in ['Noun', 'Verb', 'Adjective', 'Determiner', 'Adverb', 'Conjuction', 'Suffix']:
+            #f token not in stop_words and tag in ['Noun', 'Verb', 'Adjective', 'Determiner', 'Adverb', 'Conjuction', 'Suffix']:
+            if token not in stop_words and tag in ['Noun', 'Verb', 'Adjective', 'Foreign']:
                 result.append(token)
 
         result_dict.append(result)
@@ -45,5 +46,5 @@ result_list = preprocess(data)
 
 # 2. pickle 모듈을 활용하여 데이터 입력
 # @@@ modify
-with open('/home/hyeyoung/NKDB/data/result_list5.txt', 'wb') as f:
+with open('/home/hyeyoung/dataset/data2/result_list5_2.txt', 'wb') as f:
     pickle.dump(result_list, f)

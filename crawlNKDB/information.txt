@@ -74,3 +74,4 @@ kolofoboard,kolofo3
 nuacboard,nuac2
 nuacboard,nuac3
 nuacboard,nuac4
+tongilboard,tongil1
